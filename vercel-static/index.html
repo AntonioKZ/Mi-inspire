@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#06111f" />
+  <title>MI Inspire — Digital Signage</title>
+  <meta name="description" content="Palinsesto motivazionale e informativo per Meridionale Impianti." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="evolution.css" />
+  <link rel="stylesheet" href="brand.css" />
+  <link rel="stylesheet" href="fixes.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><img class="brand-logo" src="https://merimp.com/wp-content/uploads/2025/01/favicon.png" alt="Meridionale Impianti"><div><strong>MI INSPIRE</strong><small>People & Growth Channel</small></div></div>
+    <nav>
+      <button class="nav-item active"><span>◈</span> Regia</button>
+      <button class="nav-item" id="contentNav"><span>▣</span> Approvazioni <b class="badge" id="approvalBadge">3</b></button>
+      <button class="nav-item" id="scheduleNav"><span>◷</span> Palinsesto</button>
+      <button class="nav-item" id="screensNav"><span>◎</span> Schermi</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="status"><i></i><div><strong>TV Hall connessa</strong><small>Sincronizzata ora</small></div></div><button class="nav-item" id="settingsNav"><span>⚙</span> Impostazioni</button></div>
+  </aside>
+
+  <main>
+    <header><div><p class="eyebrow">REGIA CONTENUTI</p><h1>Buongiorno, Antonio</h1><p>Il palinsesto di oggi è pronto e in riproduzione.</p></div><div class="header-actions"><label class="department">REPARTO<select id="department"><option>Tutta l'azienda</option><option>Uffici</option><option>Produzione</option><option>Cantieri</option></select></label><span class="live"><i></i> IN ONDA</span><button class="secondary" id="fullscreen">Apri modalità TV</button><button class="primary" id="generate">✦ Genera messaggio</button></div></header>
+
+    <section class="metrics">
+      <article><span>MESSAGGI OGGI</span><strong>24</strong><small>6 categorie attive</small></article>
+      <article><span>CONTENUTI NUOVI</span><strong id="newCount">8</strong><small>Generati questa mattina</small></article>
+      <article><span>PROSSIMO AGGIORNAMENTO</span><strong id="countdown">02:48</strong><small>Rotazione automatica</small></article>
+      <article><span>SCHERMI ATTIVI</span><strong>1 / 1</strong><small class="positive">Tutto operativo</small></article>
+    </section>
+
+    <section class="workspace">
+      <div class="panel preview-panel">
+        <div class="panel-head"><div><span class="label">ANTEPRIMA LIVE</span><h2>TV Hall principale</h2></div><span class="now">Ora in onda</span></div>
+        <div class="screen" id="screen">
+          <div class="orb orb-a"></div><div class="orb orb-b"></div><div class="grid"></div>
+          <div class="screen-top"><span class="mini-logo"><img src="https://merimp.com/wp-content/uploads/2025/01/favicon.png" alt=""> <b>MI INSPIRE</b></span><span><b id="screenDept">TUTTA L'AZIENDA</b> · <i id="clock">10:42</i></span></div>
+          <div class="screen-copy"><span class="category" id="category">CRESCITA</span><blockquote id="message">Ogni grande risultato nasce da una serie di piccoli miglioramenti.</blockquote><p id="submessage">Oggi scegliamo un dettaglio da fare meglio di ieri.</p></div>
+          <div class="progress"><i id="progress"></i></div>
+        </div>
+        <div class="player"><button id="previous">‹</button><button class="play" id="play">Ⅱ</button><button id="next">›</button><div class="timeline"><i id="timeline"></i></div><span id="slideNumber">01 / 05</span></div>
+      </div>
+
+      <div class="right-column">
+        <div class="panel queue"><div class="panel-head"><div><span class="label">IN ARRIVO</span><h2>Prossimi contenuti</h2></div><button class="text-button" id="manageQueue">Gestisci</button></div><div id="queue"></div></div>
+        <div class="panel mix"><div class="panel-head"><div><span class="label">EQUILIBRIO EDITORIALE</span><h2>Mix di oggi</h2></div></div><div class="mix-row"><span>Crescita</span><div><i style="width:82%"></i></div><b>32%</b></div><div class="mix-row"><span>Squadra</span><div><i style="width:64%"></i></div><b>25%</b></div><div class="mix-row"><span>Sicurezza</span><div><i style="width:46%"></i></div><b>18%</b></div><div class="mix-row"><span>Risultati</span><div><i style="width:36%"></i></div><b>14%</b></div></div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="generator">
+    <form method="dialog"><div class="dialog-head"><div><span class="label">ASSISTENTE EDITORIALE</span><h2>Crea un nuovo messaggio</h2></div><button class="close" value="cancel">×</button></div><label>Tema<select id="theme"><option>Crescita</option><option>Squadra</option><option>Sicurezza</option><option>Innovazione</option><option>Risultati</option></select></label><label>Contesto<textarea id="context" placeholder="Es. ringraziare il team per il completamento della commessa..."></textarea></label><label>Destinatari della trasmissione<select id="target"><option>Tutta l'azienda</option><option>Uffici</option><option>Produzione</option><option>Cantieri</option></select></label><div class="route-card"><span>INVIATO PER APPROVAZIONE A</span><strong id="reviewerPreview">Responsabile comunicazione interna</strong><small>Coda interna MI Inspire · nessuna e-mail viene inviata in questa versione</small></div><div class="suggestion"><span>✦ PROPOSTA GENERATA</span><p id="aiPreview">Il progresso non chiede perfezione: chiede il coraggio di migliorare, insieme, ogni giorno.</p><button type="button" class="regenerate" id="regenerate">↻ Genera un'altra proposta</button></div><div class="dialog-actions"><button class="secondary" value="cancel">Annulla</button><button class="primary" id="publish" value="default">Invia alla coda di approvazione</button></div></form>
+  </dialog>
+  <dialog id="approvals"><form method="dialog"><div class="dialog-head"><div><span class="label">CONTROLLO EDITORIALE</span><h2>Messaggi da approvare</h2></div><button class="close" value="cancel">×</button></div><div class="approval-route"><div><span>APPROVATORE DESIGNATO</span><strong id="approvalOwner">Responsabile comunicazione interna</strong></div><small>I messaggi rimangono in questa coda finché l’approvatore non li accetta o rifiuta.</small></div><div id="approvalList"></div><div class="dialog-actions"><button class="secondary" value="cancel">Chiudi</button></div></form></dialog>
+  <dialog id="settings"><form method="dialog"><div class="dialog-head"><div><span class="label">CONFIGURAZIONE SCHERMO</span><h2>Regole del palinsesto</h2></div><button class="close" value="cancel">×</button></div><label>Durata di ogni contenuto <strong id="durationValue">15 secondi</strong><input type="range" id="duration" min="8" max="30" value="15"></label><label>Ruolo incaricato dell’approvazione<select id="reviewer"><option>Responsabile comunicazione interna</option><option>Direzione aziendale</option><option>Risorse Umane</option><option>Responsabile HSE</option></select></label><label class="switch-row"><span>Approvazione obbligatoria<small>Nessun contenuto AI va in onda senza controllo.</small></span><input type="checkbox" id="mandatory" checked></label><label class="switch-row"><span>Adatta il tono alla giornata<small>Energia al mattino, riconoscimento a fine turno.</small></span><input type="checkbox" id="adaptive" checked></label><label>Stile comunicativo<select id="tone"><option>Concreto e positivo</option><option>Ispirazionale</option><option>Tecnico e professionale</option></select></label><div class="dialog-actions"><button class="primary" id="saveSettings" value="default">Salva impostazioni</button></div></form></dialog>
+  <div class="toast" id="toast"></div>
+  <script src="app-v3.js"></script>
+</body>
+</html>
