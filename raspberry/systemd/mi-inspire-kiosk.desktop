@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=MI Inspire Kiosk
+Exec=sh -c "sleep 8; unclutter -idle 1 & chromium --kiosk --noerrdialogs --disable-infobars --autoplay-policy=no-user-gesture-required 'http://127.0.0.1:8080/player?screen=tv-hall&department=all'"
+X-GNOME-Autostart-enabled=true
